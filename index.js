@@ -65,12 +65,12 @@ function generateMD(data){
     return `# ${data.title}
     ${data.description}
     ## Table of Contents:
-    *[Installation](#installation)
-    *[Usage](#usage)
-    *[License](#license)
-    *[Contributing](#contributing)
-    *[Tests](#tests)
-    *[Questions](#questions)
+    * [Installation](#installation)
+    * [Usage](#usage)
+    * [License](#license)
+    * [Contributing](#contributing)
+    * [Tests](#tests)
+    * [Questions](#questions)
     ### Installation:
     In order to install the necessary dependencies, open the console and run the following:
     --${data.installations}--
@@ -91,9 +91,9 @@ function generateMD(data){
 }
 
 questions()
-    .then((data) => writeFileAsync('README.md',
+    .then((data) => writeFileAsync('generatedREADME.md',
     generateMD(data)))
-    .then(() => console.log("You have completed the README.ms"))
+    .then(() => console.log("You have completed the README.md"))
     .catch((err) => {
         console.log("There was an error", err)
     })

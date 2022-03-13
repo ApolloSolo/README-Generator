@@ -1,5 +1,5 @@
-# Generate README.md
-    Generate a nice README.md using command line propts.
+# The Awesome Project
+    No words needed
     ## Table of Contents:
     * [Installation](#installation)
     * [Usage](#usage)
@@ -19,8 +19,8 @@
     undefined
     ### Tests:
     To test, open the console and run the following:
-    Testing methods do not exist yet.
+    npm index.js
     ### Questions:
     If you have questions, contact me on [GitHub](https://github.com/ApolloSolo) or constact
-    Matt Teixeira at appsolo.tech@gmail.com
+    Matt at matt1teixeira@gmail.com
     
