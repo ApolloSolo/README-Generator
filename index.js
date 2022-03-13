@@ -1,97 +1,73 @@
 // TODO: Include packages needed for this application
-const inquirer = require("inquirer");
+const inquirer = require('inquirer');
 const fs = require('fs');
-const util = require('util')
+const generate = require('./utils/generateMarkdown.js');
+//const path = require('path');
 
-const writeFileAsync = util.promisify(fs.writeFile);
+function questions() {
 
-const questions = () => 
-    inquirer.prompt([
-        {
-            type: "input",
-            name: "author",
-            message: "What is the author's name?"
-        },
-        {
-            type: "input",
-            name: "username",
-            message: "What is your GitHub username?"
-        },
-        {
-            type: "input",
-            name: "email",
-            message: "What is your email address"
-        },
-        {
-            type: "input",
-            name: "title",
-            message: "What is the project's title?"
-        },
-        {
-            type: "input",
-            name: "description",
-            message: "Provide a description for the project."
-        },
-        {
-            type: "list",
-            name: "license",
-            message: "Choose a license type for this project",
-            choices: ["None", "ARTISTIC-2.0", "MIT", "BSD-3.0", "AFL-3.0", "APACHE-2.0", "GPL-3.0", "CC"]
-        },
-        {
-            type: "input",
-            name: "installation",
-            message: "What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running - dependencies."
-        },
-        {
-            type: "input",
-            name: "tests",
-            message: "How are tests ran?"
-        },
-        {
-            type: "input",
-            name: "repo",
-            message: "What does the user need to know about using the repo"
-        },
-        {
-            type: "input",
-            name: "contribute",
-            message: "What does the user need to know about contributing to the repo"
-        },
-    ]);
-
-
-function generateMD(data){
-    return `# ${data.title}
-    ${data.description}
-    ## Table of Contents:
-    * [Installation](#installation)
-    * [Usage](#usage)
-    * [License](#license)
-    * [Contributing](#contributing)
-    * [Tests](#tests)
-    * [Questions](#questions)
-    ### Installation:
-    In order to install the necessary dependencies, open the console and run the following:
-    --${data.installation}--
-    ### License:
-    This project is licensed under:
-    ${data.license}
-    ### Contributing:
-    ${data.contribute}
-    ### Tests:
-    To test, open the console and run the following:
-    ${data.tests}
-    ### Questions:
-    If you have questions, contact me on [GitHub](https://github.com/${data.username}) or constact
-    ${data.author} at ${data.email}
-    `
+    inquirer
+        .prompt([
+            {
+                type: "input",
+                message: "What is the title of your project?",
+                name: "title",
+            },
+            {
+                type: "input",
+                message: "Provide a brief description for this project?",
+                name: "description",
+            },
+            {
+                type: "input",
+                message: "How do you Install your application?",
+                name: "installation",
+            },
+            {
+                type: "input",
+                message: "What are the steps required to install your project?",
+                name: "installation",
+            },
+            {
+                type: "input",
+                message: "How does one use your application?",
+                name: "usage",
+            },
+            {
+                type: "checkbox",
+                message: "Choose a license type for this project.",
+                choices: ["MIT", "GNU General Public License 2.0", "Apache License 2.0", "GNU General Public License 3.0"],
+                name: "license",
+            },
+            {
+                type: "input",
+                message: "How can people Contribute to your project?",
+                name: "contributing",
+            },
+            {
+                type: "input",
+                message: "How are tests ran?",
+                name: "tests"
+            },
+            {
+                type: "input",
+                message: "What is your GitHub username?",
+                name: "github"
+            },
+            {
+                type: "input",
+                message: "What is your email address?",
+                name: "email"
+            },
+        ])
+        .then((response) => {
+            return fs.writeFile("README.md", generate(response), (err) => {
+                if(err) {
+                    console.log("An error occured at writFile", err);
+                    return;
+                }
+            });
+        });
 }
 
-questions()
-    .then((data) => writeFileAsync('README.md',
-    generateMD(data)))
-    .then(() => console.log("You have completed the README.md"))
-    .catch((err) => {
-        console.log("There was an error", err)
-    })
+questions();

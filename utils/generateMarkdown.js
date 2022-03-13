@@ -1,44 +1,48 @@
-const fs = require("fs");
+// function to generate markdown for README
+function licenseBadge(data) {
+  const licenseType = data.license[0];
+  let licenseString = " "
+  if (licenseType === "MIT") {
+    licenseString = `![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)`
+  };
+  if (licenseType === "GNU General Public License 2.0") {
+    licenseString = `![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)`
+  };
+  if (licenseType === "Apache License 2.0") {
+     licenseString = `![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)`
+    };
+  if (licenseType === "GNU General Public License 3.0") {
+      licenseString = `![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)`
+    };
+  return licenseString
+  };
 
-const writeToFile = (fileName, fileContent) => {
-  return new Promise((resolve, reject) => {
-    fs.writeFile(fileName, fileContent, (err) => {
-      // if there's an error, reject the Promise and send the error to the Promise's `.catch()` method
-      if (err) {
-        reject(err);
-        // return out of the function here to make sure the Promise doesn't accidentally execute the resolve() function as well
-        return;
-      }
-
-      // if everything went well, resolve the Promise and send the successful data to the `.then()` method
-      resolve({
-        ok: true,
-        message: "File created!",
-      });
-    });
-  });
-};
-
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {}
-
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
-
-// TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
-
-`;
+    return `# ${data.title}
+## Table of Contents:
+  1. [Description](#description) 
+  2. [License](#License)
+  3. [Installation](#Installation)
+  4. [Usage](#Usage)  
+  5. [Contributing](#Contributing)
+  6. [Tests](#Tests)
+  7. [GitHub](#GitHub)
+  8. [E-mail](#E-mail)
+## Description
+${data.description} 
+## License
+${licenseBadge(data)}
+## Installation
+${data.installation}
+## Usage
+${data.usage}
+## Contributing
+${data.contributing}
+## Tests
+${data.tests}
+## GitHub
+${data.github}
+## E-mail
+${data.email}`
 }
-
-module.exports = {
-  writeToFile,
-  generateMarkdown
-}
+module.exports = generateMarkdown;
