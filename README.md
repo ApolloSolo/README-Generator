@@ -1,5 +1,5 @@
-# The Awesome Project
-    No words needed
+# README Generator
+    Generate a README.md through user command line inputs.
     ## Table of Contents:
     * [Installation](#installation)
     * [Usage](#usage)
@@ -9,18 +9,16 @@
     * [Questions](#questions)
     ### Installation:
     In order to install the necessary dependencies, open the console and run the following:
-    --undefined--
-    ### Usage:
-    undefined
+    --npm install--
     ### License:
     This project is licensed under:
     MIT
     ### Contributing:
-    undefined
+    Fork and contribute as you see fit.
     ### Tests:
     To test, open the console and run the following:
-    npm index.js
+    node index.js
     ### Questions:
     If you have questions, contact me on [GitHub](https://github.com/ApolloSolo) or constact
-    Matt at matt1teixeira@gmail.com
+    Matt Teixeira at appsolo.tech@gmail.com
     

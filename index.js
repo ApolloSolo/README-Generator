@@ -73,14 +73,12 @@ function generateMD(data){
     * [Questions](#questions)
     ### Installation:
     In order to install the necessary dependencies, open the console and run the following:
-    --${data.installations}--
-    ### Usage:
-    ${data.usage}
+    --${data.installation}--
     ### License:
     This project is licensed under:
     ${data.license}
     ### Contributing:
-    ${data.contributing}
+    ${data.contribute}
     ### Tests:
     To test, open the console and run the following:
     ${data.tests}
@@ -91,7 +89,7 @@ function generateMD(data){
 }
 
 questions()
-    .then((data) => writeFileAsync('generatedREADME.md',
+    .then((data) => writeFileAsync('README.md',
     generateMD(data)))
     .then(() => console.log("You have completed the README.md"))
     .catch((err) => {
