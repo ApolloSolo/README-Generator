@@ -62,15 +62,16 @@ const questions = () =>
 
 
 function generateMD(data){
-    return `# ${data.title}
-    ${data.description}
+    return `
+    # ${data.title}
+    ### ${data.description}
     ## Table of Contents:
-    * [Installation](#installation)
-    * [Usage](#usage)
-    * [License](#license)
-    * [Contributing](#contributing)
-    * [Tests](#tests)
-    * [Questions](#questions)
+    - [Installation](#installation)
+    - [Usage](#usage)
+    - [License](#license)
+    - [Contributing](#contributing)
+    - [Tests](#tests)
+    - [Questions](#questions)
     ### Installation:
     In order to install the necessary dependencies, open the console and run the following:
     --${data.installation}--
