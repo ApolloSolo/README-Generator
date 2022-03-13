@@ -9,15 +9,15 @@
   7. [GitHub](#GitHub)
   8. [E-mail](#E-mail)
 ## Description
-The README generator takes user input, via the terminal, and automaticly generates the markdown for your new README.md file. This tech uses Inquirer, file system (fs), and Node.js. 
+The README generator takes user input, via the terminal, and automatically generates the markdown for your new README.md file. This tech uses Inquirer, file system (fs), and Node.js. 
 ## License
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 ## Installation
-To use the README generator run: "Node index.js" in the terminal, and answer the prompts. After the prompts are answered, open the new READM.md
+To use the README generator run: "Node index.js" in the terminal and answer the prompts. After the prompts are answered, open the new READM.md
 ## Usage
 To use the README generator run: "Node index.js" in the terminal
 ## Contributing
-Pull requests are avalible. 
+Pull requests are available. 
 ## Tests
 No test methods have been finalized at this time
 ## GitHub
