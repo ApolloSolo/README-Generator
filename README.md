@@ -24,3 +24,5 @@ Test methods have not been finalized at this time.
 ApolloSolo
 ## E-mail
 appsolo.tech@gmail.com
+
+### [Walkthrough Video](https://watch.screencastify.com/v/M5t8GpAPkREuBHzobPqP)
