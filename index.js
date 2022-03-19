@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generate = require('./utils/generateMarkdown.js');
+const { generateMarkdown } = require('./utils/generateMarkdown.js');
 //const path = require('path');
 
 function questions() {
@@ -21,11 +21,6 @@ function questions() {
             {
                 type: "input",
                 message: "How do you Install your application?",
-                name: "installation",
-            },
-            {
-                type: "input",
-                message: "What are the steps required to install your project?",
                 name: "installation",
             },
             {
@@ -61,7 +56,7 @@ function questions() {
             },
         ])
         .then((response) => {
-            return fs.writeFile("README.md", generate(response), (err) => {
+            return fs.writeFile("README.md", generateMarkdown(response), (err) => {
                 if(err) {
                     console.log("An error occured at writFile", err);
                     return;

@@ -1,4 +1,4 @@
-# READEME.md Generator
+# README Generator
 ## Table of Contents:
   1. [Description](#description) 
   2. [License](#License)
@@ -9,17 +9,17 @@
   7. [GitHub](#GitHub)
   8. [E-mail](#E-mail)
 ## Description
-The README generator takes user input, via the terminal, and automatically generates the markdown for your new README.md file. This tech uses Inquirer, file system (fs), and Node.js. 
+The README generator takes user input, via the terminal and automatically generates the markdown for your new README.md file. This uses Inquirer, file systems (fs), and Node.js.  
 ## License
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 ## Installation
-To use the README generator run: "Node index.js" in the terminal and answer the prompts. After the prompts are answered, open the new READM.md
+To take advantage of the README Generator, you must have Git and Node.js installed on your machine. In the terminal, run npm install to download all necessary dependencies.
 ## Usage
-To use the README generator run: "Node index.js" in the terminal
+To use the README generator run: "Node index.js" in the terminal and answer the prompts. After the prompts are answered, open the new READM.md
 ## Contributing
-Pull requests are available. 
+Please feel free to fork or clone
 ## Tests
-No test methods have been finalized at this time
+Test methods have not been finalized at this time.
 ## GitHub
 ApolloSolo
 ## E-mail
